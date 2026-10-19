@@ -43,7 +43,10 @@ public class Football extends News {
         if(competition.equals("Liga")){
             scoreNews += SCORE_NEWS_COMPETITION_LIGA;
         }
-        if(club.equals("Barça") || (club.equals("Madrid")) || (player.equals("Ferran Torres")) || (player.equals("Benzema"))){
+        if(club.equals("Barça") || (club.equals("Madrid"))){
+            scoreNews += SCORE_NEWS_CLUB_PLAYER;
+        }
+        if(player.equals("Ferran Torres") || player.equals("Benzema")){
             scoreNews += SCORE_NEWS_CLUB_PLAYER;
         }
         return scoreNews;

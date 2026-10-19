@@ -25,6 +25,10 @@ public class Editor {
         }
     }
 
+    public ArrayList<News> getNews() {
+        return news;
+    }
+
     public String getName(){
         return name;
     }

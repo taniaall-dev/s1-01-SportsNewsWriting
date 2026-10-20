@@ -28,11 +28,7 @@ The exercise covers football, basketball, tennis, Formula 1, and motorcycling.
 
 ## 🚀 Installation and Execution
 
-1. **Clone the repository:**
-
-   ```bash
-   git clone <repository-url>
-   ```
+1. **Clone the repository**
 
 2. **Open the project:** Open the cloned project in IntelliJ IDEA.
 

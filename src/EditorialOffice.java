@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class EditorialOffice {
-   ArrayList<Editor> editors = new ArrayList<>();
+   private ArrayList<Editor> editors = new ArrayList<>();
 
    public Editor getEditor (int numEditor){
        return editors.get(numEditor);

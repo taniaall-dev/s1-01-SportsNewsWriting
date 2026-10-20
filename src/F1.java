@@ -2,7 +2,7 @@ public class F1 extends News {
     public static final int PRICE_NEWS_F1TEAM = 50;
     public static final int SCORE_NEWS_F1TEAM = 2;
     private String f1team;
-    private int priceNews = 150;
+    private int priceNews = 100;
     private int scoreNews = 4;
 
     public F1 (String headline, String f1team){

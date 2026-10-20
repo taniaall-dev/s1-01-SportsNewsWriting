@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Editor {
     private String name;
-    private String nationalId;
+    private final String nationalId;
     private static int salary = 1500;
-    ArrayList<News> news = new ArrayList<>();
+    private ArrayList<News> news = new ArrayList<>();
 
     public Editor(String name, String nationalId){
         this.name = name;
@@ -26,7 +26,7 @@ public class Editor {
     }
 
     public ArrayList<News> getNews() {
-        return news;
+        return new ArrayList<>(news);
     }
 
     public String getName(){

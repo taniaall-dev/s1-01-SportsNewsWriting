@@ -19,7 +19,7 @@ public class Editor {
         news.remove(newsPosition);
     }
 
-    public void showNews(int newsPosition){
+    public void showNews(){
         for(int i = 0; i < news.size(); i++){
             System.out.println(i + " - " + news.get(i).getHeadline());
         }

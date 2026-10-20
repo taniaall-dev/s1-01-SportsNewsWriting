@@ -2,8 +2,6 @@ public class F1 extends News {
     public static final int PRICE_NEWS_F1TEAM = 50;
     public static final int SCORE_NEWS_F1TEAM = 2;
     private String f1team;
-    private int priceNews = 100;
-    private int scoreNews = 4;
 
     public F1 (String headline, String f1team){
         super(headline, "F1");
@@ -12,6 +10,8 @@ public class F1 extends News {
 
     @Override
     public int calculatePriceNews() {
+        int priceNews = 100;
+
         if (f1team.equals("Ferrari") || f1team.equals("Mercedes")){
             priceNews += PRICE_NEWS_F1TEAM;
         }
@@ -20,6 +20,8 @@ public class F1 extends News {
 
     @Override
     public int calculateScoreNews() {
+        int scoreNews = 4;
+
         if (f1team.equals("Ferrari") || f1team.equals("Mercedes")){
             scoreNews += SCORE_NEWS_F1TEAM;
         }

@@ -2,7 +2,7 @@ public class Motorcycling extends News {
     public static final int PRICE_NEWS_MOTOGPTEAM = 50;
     public static final int SCORE_NEWS_MOTOGPTEAM = 3;
     private String motoGpTeam;
-    private int priceNews = 250;
+    private int priceNews = 100;
     private int scoreNews = 4;
 
     public Motorcycling (String headline, String motoGpTeam){

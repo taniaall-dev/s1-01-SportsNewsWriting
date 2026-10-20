@@ -3,8 +3,6 @@ public class Tennis extends News {
     public static final int SCORE_NEWS_TENNIS_PLAYER = 3;
     private String competition;
     private String tennisPlayer;
-    private int priceNews = 150;
-    private int scoreNews = 4;
 
     public Tennis (String headline, String competition, String tennisPlayer){
         super(headline, "Tenis");
@@ -14,6 +12,8 @@ public class Tennis extends News {
 
     @Override
     public int calculatePriceNews() {
+        int priceNews = 150;
+
         if (tennisPlayer.equals("Federer") || tennisPlayer.equals("Nadal") || tennisPlayer.equals("Djokovic")){
             priceNews += PRICE_NEWS_TENNIS_PLAYER;
         }
@@ -22,6 +22,8 @@ public class Tennis extends News {
 
     @Override
     public int calculateScoreNews() {
+        int scoreNews = 4;
+
         if (tennisPlayer.equals("Federer") || tennisPlayer.equals("Nadal") || tennisPlayer.equals("Djokovic")){
             scoreNews += SCORE_NEWS_TENNIS_PLAYER;
         }

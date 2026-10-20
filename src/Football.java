@@ -9,8 +9,6 @@ public class Football extends News {
     private String competition;
     private String club;
     private String player;
-    private int priceNews = 300;
-    private int scoreNews = 5;
 
     public Football (String headline, String competition, String club, String player){
         super(headline, "Futbol");
@@ -21,6 +19,7 @@ public class Football extends News {
 
     @Override
     public int calculatePriceNews() {
+        int priceNews = 300;
 
         if (competition.equals("Liga de Campeones")){
             priceNews += PRICE_NEWS_COMPETITION_LIGA;
@@ -36,6 +35,7 @@ public class Football extends News {
 
     @Override
     public int calculateScoreNews() {
+        int scoreNews = 5;
 
         if(competition.equals("Liga de Campeones")){
             scoreNews += SCORE_NEWS_COMPETITION_LIGA_CAMPEONES;

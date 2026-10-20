@@ -123,7 +123,7 @@ public class Main {
                 news.setText(text);
 
                 break;
-            case "básquet":
+            case "bàsquet":
 
                 System.out.println("Introduce la competición: ");
                 competition = scanner.nextLine();

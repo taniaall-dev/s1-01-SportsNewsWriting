@@ -1,9 +1,7 @@
 public class Motorcycling extends News {
-    public static final int PRICE_NEWS_MOTOGPTEAM = 50;
-    public static final int SCORE_NEWS_MOTOGPTEAM = 3;
+    private static final int PRICE_NEWS_MOTOGPTEAM = 50;
+    private static final int SCORE_NEWS_MOTOGPTEAM = 3;
     private String motoGpTeam;
-    private int priceNews = 100;
-    private int scoreNews = 4;
 
     public Motorcycling (String headline, String motoGpTeam){
         super(headline, "Motociclisme");
@@ -12,6 +10,7 @@ public class Motorcycling extends News {
 
     @Override
     public int calculatePriceNews() {
+        int priceNews = 100;
         if(motoGpTeam.equals("Honda") || motoGpTeam.equals("Yamaha")){
             priceNews += PRICE_NEWS_MOTOGPTEAM;
         }
@@ -20,6 +19,7 @@ public class Motorcycling extends News {
 
     @Override
     public int calculateScoreNews() {
+        int scoreNews = 3;
         if(motoGpTeam.equals("Honda") || motoGpTeam.equals("Yamaha")){
             scoreNews += SCORE_NEWS_MOTOGPTEAM;
         }

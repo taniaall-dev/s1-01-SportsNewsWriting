@@ -1,10 +1,11 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main (String[] args){
-        Scanner scanner = new Scanner(System.in);
 
         EditorialOffice editorialOffice = new EditorialOffice();
         byte choseOption;
@@ -25,25 +26,25 @@ public class Main {
 
             switch (choseOption) {
                 case 1:
-                    addEditor(editorialOffice, scanner);
+                    addEditor(editorialOffice);
                     break;
                 case 2:
-                    deleteEditor(editorialOffice, scanner);
+                    deleteEditor(editorialOffice);
                     break;
                 case 3:
-                    addNews(editorialOffice, scanner);
+                    addNews(editorialOffice);
                     break;
                 case 4:
-                    deleteNewsEditorHeadline(editorialOffice, scanner);
+                    deleteNewsEditorHeadline(editorialOffice);
                     break;
                 case 5:
-                    showNewsEditor(editorialOffice, scanner);
+                    showNewsEditor(editorialOffice);
                     break;
                 case 6:
-                    calculateNewsScore(editorialOffice, scanner);
+                    calculateNewsScore(editorialOffice);
                     break;
                 case 7:
-                    calculateNewsPrice(editorialOffice, scanner);
+                    calculateNewsPrice(editorialOffice);
                     break;
                 case 0:
                     System.out.println("Has escollit sortir. Fins aviat");
@@ -53,30 +54,27 @@ public class Main {
             }
         }
     }
-    public static void addEditor(EditorialOffice editorialOffice, Scanner scanner){
-        String name;
-        String nationalId;
+    public static void addEditor(EditorialOffice editorialOffice){
         System.out.println("Has escogido introducir redactor");
         System.out.println("Introduce el nombre: ");
-        name = scanner.nextLine();
+        String name = scanner.nextLine();
         System.out.println("Introduce el DNI:");
-        nationalId = scanner.nextLine();
+        String  nationalId = scanner.nextLine();
         Editor editor1 = new Editor(name, nationalId);
         editorialOffice.addEditor(editor1);
+        System.out.println("S'ha desat un editor");
     }
-    public static void deleteEditor(EditorialOffice editorialOffice, Scanner scanner){
-        int numSelectedEditor;
+    public static void deleteEditor(EditorialOffice editorialOffice){
         System.out.println("Has triat eliminar redactor");
         editorialOffice.showEditor();
         System.out.println("Tria el redactor a eliminar: ");
-        numSelectedEditor = scanner.nextInt();
+        int numSelectedEditor = scanner.nextInt();
         scanner.nextLine();
         System.out.println("S'eliminarà el redactor número: " + numSelectedEditor);
         editorialOffice.deleteEditor(numSelectedEditor);
         System.out.println("Redactor eliminado");
     }
-    public static void addNews(EditorialOffice editorialOffice, Scanner scanner){
-        int numSelectedEditor;
+    public static void addNews(EditorialOffice editorialOffice){
         String type;
         String headline;
         String text;
@@ -94,7 +92,7 @@ public class Main {
         System.out.println("Has escogido: " + type);
         System.out.println("Escull el redactor que escriu la notícia: ");
         editorialOffice.showEditor();
-        numSelectedEditor = scanner.nextInt();
+        int numSelectedEditor = scanner.nextInt();
         scanner.nextLine();
         Editor selectedEditor = editorialOffice.getEditor(numSelectedEditor);
 
@@ -171,60 +169,59 @@ public class Main {
             default:
                 System.out.println("El tipus de notícia no existeix");
         }
+        if (news != null) {
+            System.out.println("La notícia s'ha guardat correctament");
+        }
     }
-    public static void deleteNewsEditorHeadline(EditorialOffice editorialOffice, Scanner scanner){
-        int numSelectedEditor;
-        int numSelectedNews;
+    public static void deleteNewsEditorHeadline(EditorialOffice editorialOffice){
         Editor selectedEditor;
         System.out.println("Has escogido eliminar noticia");
         editorialOffice.showEditor();
         System.out.println("Introdueix el número de qui va redactar la notícia que vols eliminar: ");
-        numSelectedEditor = scanner.nextInt();
+        int numSelectedEditor = scanner.nextInt();
         scanner.nextLine();
         selectedEditor = editorialOffice.getEditor(numSelectedEditor);
         selectedEditor.showNews();
         System.out.println("Introdueix el número de la notícia a eliminar: ");
-        numSelectedNews = scanner.nextInt();
+        int numSelectedNews = scanner.nextInt();
         scanner.nextLine();
         selectedEditor.deleteNews(numSelectedNews);
         System.out.println("S'ha eliminat la notícia");
     }
-    public static void showNewsEditor(EditorialOffice editorialOffice, Scanner scanner){
-        int numSelectedEditor;
+    public static void showNewsEditor(EditorialOffice editorialOffice){
         Editor selectedEditor;
         System.out.println("Heu escollit mostrar totes les notícies d'un redactor");
         editorialOffice.showEditor();
         System.out.println("Introduce el número del redactor para mostrar todas las noticias");
-        numSelectedEditor = scanner.nextInt();
+        int numSelectedEditor = scanner.nextInt();
         scanner.nextLine();
         selectedEditor = editorialOffice.getEditor(numSelectedEditor);
         selectedEditor.showNews();
+        System.out.println("S'han mostrat les notícies del redactor");
     }
-    public static void calculateNewsScore(EditorialOffice editorialOffice, Scanner sc){
-        int selectedNews;
+    public static void calculateNewsScore(EditorialOffice editorialOffice){
         System.out.println("Has escogido calcular la puntuación de la noticia");
         ArrayList<News> allNews = editorialOffice.getNewsAllEditors();
         for(int i = 0; i < allNews.size(); i++){
             System.out.println(i + " - " + allNews.get(i).getHeadline());
         }
         System.out.println("Introduce el número de la noticia a la que quieres calcular la puntuación:");
-        selectedNews = sc.nextInt();
-        sc.nextLine();
+        int selectedNews = scanner.nextInt();
+        scanner.nextLine();
         News noticia = allNews.get(selectedNews);
         int calculatedScore = noticia.calculateScoreNews();
         System.out.println("La puntuación de la noticia es: " + calculatedScore);
 
     }
-    public static void calculateNewsPrice(EditorialOffice editorialOffice, Scanner sc){
-        int selectedNews;
+    public static void calculateNewsPrice(EditorialOffice editorialOffice){
         System.out.println("Has escogido calcular el precio de la noticia");
         ArrayList<News> allNews = editorialOffice.getNewsAllEditors();
         for(int i = 0; i < allNews.size(); i++){
             System.out.println(i + " - " + allNews.get(i).getHeadline());
         }
         System.out.println("Introduce el número de la noticia a la que quieres calcular el precio:");
-        selectedNews = sc.nextInt();
-        sc.nextLine();
+        int selectedNews = scanner.nextInt();
+        scanner.nextLine();
         News news = allNews.get(selectedNews);
         int newsPrice = news.calculatePriceNews();
         System.out.println("El precio de la noticia es: " + newsPrice);

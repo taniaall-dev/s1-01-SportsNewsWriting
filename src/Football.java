@@ -1,11 +1,10 @@
 public class Football extends News {
-    /// USAR CONSTANTES PARA EVITAR NUMEROS MÁGICOS
-    public static final int PRICE_NEWS_COMPETITION_LIGA = 100;
-    public static final int PRICE_NEWS_CLUB = 100;
-    public static final int PRICE_NEWS_PLAYER = 50;
-    public static final int SCORE_NEWS_COMPETITION_LIGA_CAMPEONES = 3;
-    public static final int SCORE_NEWS_COMPETITION_LIGA = 2;
-    public static final int SCORE_NEWS_CLUB_PLAYER = 1;
+    private static final int PRICE_NEWS_COMPETITION_LIGA = 100;
+    private static final int PRICE_NEWS_CLUB = 100;
+    private static final int PRICE_NEWS_PLAYER = 50;
+    private static final int SCORE_NEWS_COMPETITION_LIGA_CAMPEONES = 3;
+    private static final int SCORE_NEWS_COMPETITION_LIGA = 2;
+    private static final int SCORE_NEWS_CLUB_PLAYER = 1;
     private String competition;
     private String club;
     private String player;

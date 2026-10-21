@@ -1,6 +1,6 @@
 public class F1 extends News {
-    public static final int PRICE_NEWS_F1TEAM = 50;
-    public static final int SCORE_NEWS_F1TEAM = 2;
+    private static final int PRICE_NEWS_F1TEAM = 50;
+    private static final int SCORE_NEWS_F1TEAM = 2;
     private String f1team;
 
     public F1 (String headline, String f1team){

@@ -1,9 +1,9 @@
 public class Basketball extends News {
-    public static final int PRICE_NEWS_COMPETITION_EUROLIGA = 75;
-    public static final int PRICE_NEWS_CLUB = 75;
-    public static final int SCORE_NEWS_COMPETITION_EUROLIGA = 3;
-    public static final int SCORE_NEWS_COMPETITION_ACB = 2;
-    public static final int SCORE_NEWS_CLUB = 1;
+    private static final int PRICE_NEWS_COMPETITION_EUROLIGA = 75;
+    private static final int PRICE_NEWS_CLUB = 75;
+    private static final int SCORE_NEWS_COMPETITION_EUROLIGA = 3;
+    private static final int SCORE_NEWS_COMPETITION_ACB = 2;
+    private static final int SCORE_NEWS_CLUB = 1;
     private String competition;
     private String club;
 
